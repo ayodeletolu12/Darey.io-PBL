@@ -84,8 +84,15 @@ With this my VirtualHost configuration, I am telling Apache to serve tolulopeinf
 $ sudo a2dissite 000-default
 
 ##### Step F: I can now enable my custom config file
-$ sudo a2ensite tolulopeinfotech
+_$ sudo a2ensite tolulopeinfotech
+![image](https://user-images.githubusercontent.com/56724044/127908423-cfef08ad-d5b9-42a3-b5b3-a4d06bcda485.png)
 
+##### Step G: Next thing is to reload my Apache web server. The reload will reload the config file
+_$ sudo systemctl reload apache2
+
+##### Create a new index.html for my website
+My new website is now active, but the web root /var/www/tolulopeinfotech is still empty. I will create an index.html file in that location so that I can test that the virtual host works as expected:
+_$ sudo echo "Hello LAMP STACK from hostname" > /var/www/tolulopeinfotech/index.html
 
 
 
