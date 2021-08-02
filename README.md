@@ -47,6 +47,9 @@ $ sudo apt install php php-mysql libapache2-mod-php
 
 ##### Once the installation is finished, you can run the following command to confirm your PHP version:
 $ php -v
+![image](https://user-images.githubusercontent.com/56724044/127903387-5320fa22-3297-4b66-870c-4b82d1d95e68.png)
+
+At this point, my LAMP stack is completely installed and fully operational on my ubuntu remote server.
 
 
 
