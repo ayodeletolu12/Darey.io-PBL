@@ -76,6 +76,17 @@ $ sudo vim  /etc/apache/sites-available/tolulopeinfotech.conf
 
 ##### Step D: to be sure that the .conf file is in the right directory, You can use the ls command to show the new file in the sites-available directory
 sudo ls /etc/apache2/sites-available
+![image](https://user-images.githubusercontent.com/56724044/127907696-9e473297-2e7f-4f6d-8124-5da3c267cbb0.png)
+
+With this my VirtualHost configuration, I am telling Apache to serve tolulopeinfotech using /var/www/tolulopeinfotech as its web root directory. If you would like to test Apache without a domain name, you can remove or comment out the options ServerName and ServerAlias by adding a # character in the beginning of each option’s lines. Adding the # character there will tell the program to skip processing the instructions on those lines.
+
+##### Step E: Now that our .conf file is fine, we need to disable the default apache config file 000-default.conf and enable my tolulopeinfotech.conf so that Apache will not go and pick the default config. Apache’s default configuration would overwrite your virtual host. To disable Apache’s default website use a2dissite command 
+$ sudo a2dissite 000-default
+
+##### Step F: I can now enable my custom config file
+$ sudo a2ensite tolulopeinfotech
+
+
 
 
 
