@@ -7,11 +7,18 @@ Darey.io PBL Projects implementation
 ## STEP 1 INSTALL APACHE WEB SERVER ON A LINUX UBUNTU SERVER
 
    ##### STEP A — Connect from my Linux terminal to the Linux Ubuntu 20.4 remote server using SSH : 
+```
 ~$ ssh tolulope@remote_IP_Address
 
+```
+
 ##### STEP B - Ensure that the ubuntu server repository is updated and packages upgraded
+
+```
 ~$ sudo apt update
 ~$ sudo apt upgrade
+
+```
 
 ##### STEP C — INSTALLING APACHE AND UPDATING THE FIREWALL
 Install and upgrade Apache on the remote server
