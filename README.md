@@ -17,9 +17,12 @@ $ sudo apt install apache2
 $ sudo apt upgrade apache2
 
 ### Step 4: Check that Apache2 is running on your server
-	$ sudo systemctl status apache2
-Step 7: Check that the installation is successful
+$ sudo systemctl status apache2
+![image](https://user-images.githubusercontent.com/56724044/127899991-f6ffa41f-405d-49b3-80ea-657da17d5a8c.png)
+
+### Step 7: Check that the installation is successful
 	Go to the browser and enter the the localhost or server IP address
+Once the Apache home page displays, thats show that the whole installation is successful on the remote server
 
 
 
