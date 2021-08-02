@@ -52,6 +52,32 @@ $ php -v
 At this point, my LAMP stack is completely installed and fully operational on my ubuntu remote server.
 
 
+# TESTING MY SET UP WITH A PHP SCRIPTS.
+This will be set up by creating a Apache Virtual Host, this enables me to create multiple websites to hold websites files and folders on a single machine.
+
+# STEP 4 — CREATING A VIRTUAL HOST FOR MY WEBSITE USING APACHE
+Apache web server has a default server block enabled to serve documents in **_/var/www/html directory_**. For me to add multiple websites, I will create multiple directories in the /var/www/directory
+I will set up a domain called **tolulopeinfotech.com**
+
+##### Step A: Create a directory for my domain / website in the root directory /var/www/
+$ sudo mkdir -p /var/www/tolulopeinfotech
+
+##### Step B: Assign ownership permission to the user that might want to access the directory i.e. Next, assign ownership of the directory with your current system user:
+sudo chown -R $USER:$USER /var/www/tolulopeinfotech
+
+##### Step C: Step 3: Create configuration file to serve the website in the root directory
+I need to create a configuration file in **Apache’s sites-available directory** using any text editor of my choice. 
+Go back to the root directory, inside the /etc/apache2/sites-available directory, you will see the default config 000-default.conf. this default serves the default apache webpage after installation. We need to create a new config file for the website (tolulopeinfotech) 
+$ cd /
+$ sudo cd /etc/apache2/sites-available
+$ sudo vim tolulopeinfotech.conf    OR
+$ sudo vim  /etc/apache/sites-available/tolulopeinfotech.conf
+
+
+
+
+
+
 
 
 
