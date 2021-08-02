@@ -103,11 +103,13 @@ This is useful for setting up maintenance pages in PHP applications, by creating
 In case you want to change this behavior, you’ll need to edit the default configuration file **/etc/apache2/mods-enabled/dir.conf** file and change the order in which the index.php file is listed within the DirectoryIndex directive:
 This can be achieved from the etc/apache2/mods-enabled directory, edit the dir.conf
 
-_$ sudo vim /etc/apache2/mods-enabled/dir.conf
+**_$ sudo vim /etc/apache2/mods-enabled/dir.conf**
 You are simply going to change the precedence. index.php before index.html
+![image](https://user-images.githubusercontent.com/56724044/127913052-d94f2ef7-b752-444a-87e6-9f57357a3904.png)
+
 
 Reload the Apache for the config to take effect
-_$ sudo systemctl reload apache2
+**_$ sudo systemctl reload apache2**
 
 Finally, I will create a PHP script to test that PHP is correctly installed and configured on my server.
 
@@ -116,8 +118,11 @@ Now that I have a custom location to host your website’s files and folders, I 
 ##### Step A Create a new file named index.php inside your custom web root folder: /var/www/tolulopeinfotech/index.php
 $ sudo vim /var/www/tolulopeinfotech/index.php
 This will open a blank file. Add the following text, which is valid PHP code, inside the file:
+```
 <?php
 phpinfo();
+
+```
 
 
 
