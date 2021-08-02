@@ -185,7 +185,10 @@ Finally, I will create a PHP script to test that PHP is correctly installed and 
 Now that I have a custom location to host your website’s files and folders, I will create a PHP test script to confirm that Apache is able to handle and process requests for PHP files.
 
 ##### Step A Create a new file named index.php inside your custom web root folder: /var/www/tolulopeinfotech/index.php
+```
 $ sudo vim /var/www/tolulopeinfotech/index.php
+```
+
 This will open a blank file. Add the following text, which is valid PHP code, inside the file:
 ```
 <?php
