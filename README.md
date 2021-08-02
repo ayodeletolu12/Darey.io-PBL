@@ -72,6 +72,11 @@ $ cd /
 $ sudo cd /etc/apache2/sites-available
 $ sudo vim tolulopeinfotech.conf    OR
 $ sudo vim  /etc/apache/sites-available/tolulopeinfotech.conf
+![image](https://user-images.githubusercontent.com/56724044/127907360-40442155-e280-496b-b2ff-c4543e9f2b56.png)
+
+##### Step D: to be sure that the .conf file is in the right directory, You can use the ls command to show the new file in the sites-available directory
+sudo ls /etc/apache2/sites-available
+
 
 
 
