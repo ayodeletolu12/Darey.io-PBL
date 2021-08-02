@@ -37,7 +37,17 @@ $ sudo apt install mysql-server
 	$ sudo mysql_secure_installation
 ##### Step D - After installing the security script, check that mysql is successfully installed on the server
 	$ sudo mysql
-	
+![image](https://user-images.githubusercontent.com/56724044/127902121-de3b75de-fe54-4c8a-b71c-60755b3b9467.png)
+
+## STEP 3 — INSTALLING PHP
+**PHP** is the component of the **LAMP setup** that will process code to display dynamic content to the end user. In addition to the php package, we will need **php-mysql**, a PHP module that allows PHP to communicate with MySQL-based databases. and **libapache2-mod-php** to enable Apache to handle PHP files. Core PHP packages will automatically be installed as dependencies.
+
+##### Step A: To install this 3 packages/modules at once
+$ sudo apt install php php-mysql libapache2-mod-php
+
+##### Once the installation is finished, you can run the following command to confirm your PHP version:
+$ php -v
+
 
 
 
