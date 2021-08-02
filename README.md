@@ -93,11 +93,31 @@ _$ sudo systemctl reload apache2
 ##### Create a new index.html for my website
 My new website is now active, but the web root /var/www/tolulopeinfotech is still empty. I will create an index.html file in that location so that I can test that the virtual host works as expected:
 _$ sudo echo "Hello LAMP STACK from hostname" > /var/www/tolulopeinfotech/index.html
+check the browser and again, the Apache default page shouldn't be showing again.
 
+# STEP 5 — ENABLE PHP ON THE WEBSITE
+With the default DirectoryIndex settings on Apache, a file named index.html will always take precedence over an index.php file
 
+This is useful for setting up maintenance pages in PHP applications, by creating a temporary index.html file containing an informative message to visitors. Because this page will take precedence over the index.php page, it will then become the landing page for the application. Once maintenance is over, the index.html is renamed or removed from the document root, bringing back the regular application page.
 
+In case you want to change this behavior, you’ll need to edit the default configuration file **/etc/apache2/mods-enabled/dir.conf** file and change the order in which the index.php file is listed within the DirectoryIndex directive:
+This can be achieved from the etc/apache2/mods-enabled directory, edit the dir.conf
 
+_$ sudo vim /etc/apache2/mods-enabled/dir.conf
+You are simply going to change the precedence. index.php before index.html
 
+Reload the Apache for the config to take effect
+_$ sudo systemctl reload apache2
+
+Finally, I will create a PHP script to test that PHP is correctly installed and configured on my server.
+
+Now that I have a custom location to host your website’s files and folders, I will create a PHP test script to confirm that Apache is able to handle and process requests for PHP files.
+
+##### Step A Create a new file named index.php inside your custom web root folder: /var/www/tolulopeinfotech/index.php
+$ sudo vim /var/www/tolulopeinfotech/index.php
+This will open a blank file. Add the following text, which is valid PHP code, inside the file:
+<?php
+phpinfo();
 
 
 
