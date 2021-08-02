@@ -22,8 +22,15 @@ Darey.io PBL Projects implementation
 
 ##### STEP C — INSTALLING APACHE AND UPDATING THE FIREWALL
 Install and upgrade Apache on the remote server
+
+```
+* * *
 $ sudo apt install apache2
+* * *
 $ sudo apt upgrade apache2
+
+```
+
 
 ##### Step D - Check that Apache2 is running on your server
 $ sudo systemctl status apache2
