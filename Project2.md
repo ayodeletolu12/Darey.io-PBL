@@ -19,6 +19,9 @@ $ sudo apt install nginx
 ```
 $ sudo systemctl status nginx
 ```
+![image](https://user-images.githubusercontent.com/56724044/128054587-98100c84-976a-4b7b-906c-d0d3e024bfb9.png)
+
+##### Ensure from the security group in AWS that port 80 is allowed in order to receive traffic from the web browser
 
 
 
