@@ -70,4 +70,4 @@ $ sudo rm -rf /etc/apache
 ```
 After removing Apache from the server. Nginx was now showing as thge default web page on the browser
 
-
+# STEP 4 — CONFIGURING NGINX TO USE PHP PROCESSOR
