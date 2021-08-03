@@ -44,6 +44,30 @@ $ sudo mysql
 ```
 # STEP 3 – INSTALLING PHP
 ##### Installing php the last component of the lemp stack web technology
+I have Nginx installed to serve my contents and MySQL installed to store and manage your data. Now the next component to be installed is the PHP to process code and generate dynamic content for the web server.
 
+While Apache embeds the PHP interpreter in each request, **Nginx** requires an external program to handle PHP processing and act as a bridge between the PHP interpreter itself and the web server. **This allows for a better overall performance in most PHP-based websites,** but it requires additional configuration. I will need to install `php-fpm`, which stands for **“PHP fastCGI process manager”**, and tell Nginx to pass PHP requests to this software for processing. Additionally, I will need php-mysql, a PHP module that allows PHP to communicate with MySQL-based databases. Core PHP packages will automatically be installed as dependencies.
+
+##### To install these 2 packages at once, run:
+```
+sudo apt install php-fpm php-mysql
+```
+# A BLOCKER WAS MET AFTER COMPLETE INSTALLATION
+After the installation of PHP and the external program php-fpm, Apache2 default home page was now overriding NGINX without installing Apache on the server.
+Despite uninstalling the PHP program from the server, the webpage was still showing the default Apache2 webpage instead of NGINX
+
+#### Resolution
+It appears that the PHP-fpm also installs Apache2 unto the server automatically hence Nginx listening on the same port with apache2 by default
+
+Uninstall Apache from the server
+```
+$ sudo service apache2 stop
+$ sudo apt-get purge apache2 apache2-utils apache2-bin apache2.2-common
+$ sudo apt-get autoremove
+$ whereis apache2
+apache2: /etc/apache2
+$ sudo rm -rf /etc/apache
+```
+After removing Apache from the server. Nginx was now showing as thge default web page on the browser
 
 
