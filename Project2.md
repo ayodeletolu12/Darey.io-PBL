@@ -25,6 +25,23 @@ $ sudo systemctl status nginx
 ![image](https://user-images.githubusercontent.com/56724044/128057324-72ffa1b9-d238-4ce4-a5c8-2036265663dc.png)
 
 ##### STEP C - Go to the broswer enter your server IP Address to access the Nginx web page
+![image](https://user-images.githubusercontent.com/56724044/128057659-8d001870-3e45-47f4-ab3a-365df8dddeb7.png)
+
+# STEP 2 — INSTALLING MYSQL AS PART OF THE LEMP STACK COMPONENT
+##### STEP A - Install the mysql-server on your linux remote server as one of the component of LAMP stack
+```
+$ sudo apt install mysql-server
+```
+##### Step C - After the installation, run a security script that comes pre-installed with Mysql
+
+```
+$ sudo mysql_secure_installation
+```
+
+Step D - After installing the security script, check that mysql is successfully installed on the server
+```
+$ sudo mysql
+```
 
 
 
