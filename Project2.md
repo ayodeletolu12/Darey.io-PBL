@@ -42,6 +42,8 @@ Step D - After installing the security script, check that mysql is successfully 
 ```
 $ sudo mysql
 ```
+# STEP 3 – INSTALLING PHP
+##### Installing php the last component of the lemp stack web technology
 
 
 
