@@ -106,3 +106,22 @@ before linking the new config file,you will only see the Nginx default config in
 After linking the new config file to the sites-enabled directory, the new config file will now show in sites-enabled directory
 ![image](https://user-images.githubusercontent.com/56724044/128132125-bf7a0c65-fe9d-4dbc-a511-fb1ea9fc462a.png)
 **Test that the configuration syntax is okay.** ``` sudo nginx -t ```
+![image](https://user-images.githubusercontent.com/56724044/128132452-424ac09e-43d8-4e72-b350-8865ff12116a.png)
+
+##### Step E - We need to disable the default config so that Nginx can serve our website config
+We also need to disable default Nginx host that is currently configured to listen on port 80, for this we will run:
+```
+$ sudo unlink /etc/nginx/sites-enabled/default
+```
+You can check that the default nginx config file is no longer in the site-enabled directory
+```
+$ sudo ls /etc/nginx/sites-enabled
+```
+##### Step F - When everything looks fine, reload Nginx to apply the changes made in the configuration directory
+```
+$ sudo system reload nginx
+```
+My new website is now active, but the web root /var/www/projectLEMP is still empty. I will create an index.html file in that location so that we can test that my new server block works as expected:
+```
+sudo echo 'Hello LEMP from hostname' $(curl -s http://169.254.169.254/latest/meta-data/public-hostname) 'with public IP' $(curl -s http://169.254.169.254/latest/meta-data/public-ipv4) > /var/www/projectLEMP/index.html
+```
