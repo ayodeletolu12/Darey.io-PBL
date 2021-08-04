@@ -104,3 +104,5 @@ sudo ln -s /etc/nginx/sites-available/projectLEMP /etc/nginx/sites-enabled/
 ```
 before linking the new config file,you will only see the Nginx default config in the site-enabled directory because its enabled by default /etc/nginx/sites-enabled/default.
 After linking the new config file to the sites-enabled directory, the new config file will now show in sites-enabled directory
+![image](https://user-images.githubusercontent.com/56724044/128132125-bf7a0c65-fe9d-4dbc-a511-fb1ea9fc462a.png)
+**Test that the configuration syntax is okay.** ``` sudo nginx -t ```
