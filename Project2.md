@@ -125,3 +125,53 @@ My new website is now active, but the web root /var/www/projectLEMP is still emp
 ```
 sudo echo 'Hello LEMP from hostname' $(curl -s http://169.254.169.254/latest/meta-data/public-hostname) 'with public IP' $(curl -s http://169.254.169.254/latest/meta-data/public-ipv4) > /var/www/projectLEMP/index.html
 ```
+# STEP 5 – TESTING PHP WITH NGINX
+By now my LEMP stack is completely set up. I need to confirm that Nginx can handle php files to php processor.
+Let's create a php file
+```
+$ sudo nano /var/www/projectLEMP/info.php
+```
+```
+<?php
+phpinfo();
+```
+In order to confirm that nginx is serving php file to the preprocessor, go back to the browser and enter ipaddress/info.php
+or you change the preference in the nginx config file for the domain website
+
+# STEP 6 – RETRIEVING DATA FROM MYSQL DATABASE WITH PHP (CONTINUED)
+Here I will create a test database (DB) with simple "To do list" and configure access to it, so the Nginx website would be able to query data from the DB and display it.
+
+We will create a new user with the **mysql_native_password authentication method** in order to be able to connect to the MySQL database from PHP.
+
+We will create a database named **myfirst_database and a user named tolulope**.
+
+##### Step A - First, connect to the MySQL console using the root account:
+```
+sudo mysql
+```
+##### Step B - To create a new database, run the following command from your MySQL console:
+```
+mysql> CREATE DATABASE `myfirst_database`;
+```
+##### Step C - Now you can create a new user using mysql_native_password as default authentication method. and grant him full privileges on the database you have just created.
+```
+mysql>  CREATE USER 'tolulope'@'%' IDENTIFIED WITH mysql_native_password BY 'password';
+```
+##### Step D - Now we need to give this user permission over the myfirst_database database:
+```
+mysql> GRANT ALL ON myfirst_database.* TO 'tolulope'@'%';
+```
+This will give user **tolulope** full privileges over the myfirst_database database, while preventing this user from creating or modifying other databases on your server.
+
+Now exit the MySQL shell with:
+```
+mysql> exit
+```
+You can test if the new user has the proper permissions by logging in to the MySQL console again, this time using the custom user credentials:
+```
+mysql -u tolulope -p
+```
+Notice the -p flag in this command, which will prompt you for the password used when creating the tolulope user. After logging in to the MySQL console, confirm that you have access to the myfirst_database database:
+```
+mysql> SHOW DATABASES;
+```
