@@ -175,3 +175,4 @@ Notice the -p flag in this command, which will prompt you for the password used 
 ```
 mysql> SHOW DATABASES;
 ```
+![image](https://user-images.githubusercontent.com/56724044/128232755-4345af13-23ae-4ecb-85f4-a3ae2f83c3b9.png)
