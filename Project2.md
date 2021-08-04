@@ -95,3 +95,12 @@ $ sudo ls /etc/nginx/sites-available ------- You will see the nginx default conf
 ```
 $ sudo nano /etc/nginx/sites-available/projectLEMP
 ```
+![image](https://user-images.githubusercontent.com/56724044/128130796-04179e5a-250f-4568-8030-c8523d451079.png)
+
+##### Step D - Ensure the newly created config file is activated, this is done by linking the config to Nginx sites-enabled directory in etc
+Activate your configuration by linking to the config file from Nginx’s sites-enabled directory:
+```
+sudo ln -s /etc/nginx/sites-available/projectLEMP /etc/nginx/sites-enabled/
+```
+before linking the new config file,you will only see the Nginx default config in the site-enabled directory because its enabled by default /etc/nginx/sites-enabled/default.
+After linking the new config file to the sites-enabled directory, the new config file will now show in sites-enabled directory
