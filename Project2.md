@@ -65,9 +65,33 @@ $ sudo service apache2 stop
 $ sudo apt-get purge apache2 apache2-utils apache2-bin apache2.2-common
 $ sudo apt-get autoremove
 $ whereis apache2
-apache2: /etc/apache2
+apache2: /etc/apache2ml
 $ sudo rm -rf /etc/apache
 ```
 After removing Apache from the server. Nginx was now showing as thge default web page on the browser
 
 # STEP 4 — CONFIGURING NGINX TO USE PHP PROCESSOR
+On Ubuntu 20.04, Nginx has one server block enabled by default and is configured to serve documents out of a directory at **web root /var/www/html.** While this works well for a single site, it can become difficult to manage if you are hosting multiple sites. Instead of modifying **/var/www/html**, we’ll create a directory structure within /var/www for the my domain website,I will be using projectlemp leaving /var/www/html in place as the default directory to be served if a client request does not match any other sites.
+
+##### Step A - Create the web root directoy that will serve the domain web files and folder
+```
+$ sudo mkdir -p /var/www/projectlemp
+```
+##### Step B - Assign ownership permission to the domain web root directory with the $USER environment variable. This will reference your current system user
+```
+$ sudo chown -R $USER:$USER /var/www/projectlemp
+```
+##### Step C - Create a new configuration file in Nginx's sites-available
+Nginx has default configuration in sites-available directory
+```
+$ sudo ls /etc/nginx/sites-available ------- You will see the nginx default config file
+```
+# You need to create a new config file for the website: 
+#https://www.nginx.com/resources/wiki/start/
+#https://www.nginx.com/resources/wiki/start/topics/tutorials/config_pitfalls/
+#https://wiki.debian.org/Nginx/DirectoryStructure
+#Please see /usr/share/doc/nginx-doc/examples/ for more detailed examples.
+
+```
+$ sudo nano /etc/nginx/sites-available/projectLEMP
+```
