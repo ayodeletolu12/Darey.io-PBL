@@ -48,4 +48,13 @@ Now I will change current directory to the newly created one:
 $ cd Todo
 ```
 ##### Step D - It is important you initialize the application project with npm init, this will actually create a file named package.json. This package.json will normally contain information about the application and the dependencies that it needs to run.
+```
+$ npm init
+```
+![image](https://user-images.githubusercontent.com/56724044/128399534-799ae92d-258a-4582-99ec-4a48b2b7c317.png)
 
+##### You need to check that package.json is now in the directory after initializing the project directory
+still within the Todo directory, run this command
+```
+ls
+```
