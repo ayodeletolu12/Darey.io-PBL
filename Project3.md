@@ -88,4 +88,17 @@ Go to the directory where you have your index.js and run this command
 $ node index.js
 ```
 ![image](https://user-images.githubusercontent.com/56724044/128412901-2b63212c-4822-47e3-b388-2fbf30756476.png)
+
 ##### Now that our server is running on port 5000, we need to open this port in EC2 Security Groups.
+Once the port 5000 is now opened in the security group, Open up your browser and try to access your server’s Public IP or Public DNS name followed by port 5000:
+```
+http://<PublicIP-or-PublicDNS>:5000
+```
+![image](https://user-images.githubusercontent.com/56724044/128414048-fac70065-383a-40cf-acec-6f515f7c3d50.png)
+
+# ROUTES
+There are three actions that our To-Do application needs to be able to do:
+
+1 Create a new task
+1 Display list of all tasks
+1 Delete a completed task
