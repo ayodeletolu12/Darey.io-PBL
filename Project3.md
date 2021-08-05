@@ -66,3 +66,17 @@ To use express js, install it using npm. Remember that is the package manager fo
 ```
 $ npm install express
 ```
+![image](https://user-images.githubusercontent.com/56724044/128410870-91d16d5f-3df8-44c2-b233-d6b0674a6887.png)
+
+##### Step A - Now create a file index.js with the command below
+```
+$ touch index.js
+```
+##### Step B - Install dotenv module
+```
+$ npm install dotenv
+```
+Open the index.js file with the command below
+```
+$ vim index.js
+```
