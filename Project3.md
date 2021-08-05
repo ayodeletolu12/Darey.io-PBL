@@ -102,3 +102,23 @@ There are three actions that our To-Do application needs to be able to do:
 1. Create a new task
 1. Display list of all tasks
 1. Delete a completed task
+Each task will be associated with some particular endpoint and will use different standard HTTP request methods: POST, GET, DELETE.
+
+For each task, we need to create routes that will define various endpoints that the To-do app will depend on. So let us create a folder routes
+```
+$ mkdir routes
+```
+Change directory to routes folder.
+```
+$ cd routes
+```
+Now, create a file api.js with the command below
+```
+$ touch api.js
+```
+Open the file with the command below
+```
+$ vim api.js
+```
+
+
