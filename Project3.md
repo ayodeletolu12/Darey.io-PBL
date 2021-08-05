@@ -1,6 +1,6 @@
 # WEB STACK IMPLEMENTATION/SOLUTION BASED ON MERN IN AWS CLOUD
 ### M - Mongo DB ----------- Database
-### E - Express JS ---------- Client side
+### E - Express JS ---------- Node JS server side framework
 ### R - React JS ------------ Client side
 ### N - Node JS ------------- Server side
 
@@ -16,5 +16,17 @@ $ sudo apt update
 ```
 sudo apt upgrade
 ```
-Lets get the location of Node.js software from Ubuntu repositories.
-
+##### Step A - Lets get the location of Node.js software from Ubuntu repositories.
+```
+$ sudo curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
+```
+##### Step C - Install Node.js on the server, the command will also install Node.js 12.x and npm
+```
+$ sudo apt-get install -y nodejs
+```
+NPM is a package manager for Node like apt for Ubuntu, it is used to install Node modules & packages and to manage dependency conflicts.
+After the installation, you can verify the node installation with the command below
+```
+$ node -v
+$ npm -v
+```
