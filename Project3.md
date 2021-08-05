@@ -80,3 +80,10 @@ Open the index.js file with the command below
 ```
 $ vim index.js
 ```
+![image](https://user-images.githubusercontent.com/56724044/128412286-33c0e037-e548-4a62-90d7-484802929eaf.png)
+
+Now it is time to start our server to see if it works. Open your terminal in the same directory as your index.js file and type:
+Go to the directory where you have your index.js and run this command
+```
+$ node index.js
+```
