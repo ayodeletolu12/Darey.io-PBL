@@ -87,3 +87,5 @@ Go to the directory where you have your index.js and run this command
 ```
 $ node index.js
 ```
+![image](https://user-images.githubusercontent.com/56724044/128412901-2b63212c-4822-47e3-b388-2fbf30756476.png)
+##### Now that our server is running on port 5000, we need to open this port in EC2 Security Groups.
