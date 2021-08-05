@@ -155,4 +155,17 @@ Open the file created with vim todo.js then paste the code below in the file:
 ```
 $ vim touch todo.js
 ```
+![image](https://user-images.githubusercontent.com/56724044/128417489-76e512c1-ae0b-45b5-97f2-28ac5e5d7614.png)
+
+Now we need to update our routes from the file api.js in ‘routes’ directory to make use of the new model.
+
+In Routes directory, open api.js with vim api.js, delete the code inside with :%d command and paste there code below into it then save and exit
+```
+$ vim api.js
+```
+![image](https://user-images.githubusercontent.com/56724044/128418002-1f343bd2-2fbc-489d-9d14-625ad86205b1.png)
+
+# Next is MONGODB DATABASE
+
+
 
