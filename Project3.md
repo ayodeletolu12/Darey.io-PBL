@@ -41,3 +41,11 @@ Run the command below to verify that the Todo directory is created with ls comma
 ```
 ls
 ```
+![image](https://user-images.githubusercontent.com/56724044/128394208-30dae36c-e9ea-404a-a4b4-bc2e97ad1eb3.png)
+
+Now I will change current directory to the newly created one:
+```
+$ cd Todo
+```
+##### Step D - It is important you initialize the application project with npm init, this will actually create a file named package.json. This package.json will normally contain information about the application and the dependencies that it needs to run.
+
