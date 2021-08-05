@@ -120,5 +120,17 @@ Open the file with the command below
 ```
 $ vim api.js
 ```
+![image](https://user-images.githubusercontent.com/56724044/128415668-f23140fa-e9c2-4e7e-970d-9da4f2611f8c.png)
 
+# MODELS
+Since the application will make sue of MongoDB which is NoSQL database, we need to create a model.
+**A model** is at the heart of JavaScript based applications, and it is what makes it interactive.
 
+We will also **use models to define the database schema** . This is important so that we will be able to define the fields stored in each Mongodb document.
+In essence, **the Schema is a blueprint of how the database will be constructed,** including other data fields that may not be required to be stored in the database. These are known as virtual properties
+
+##### To create a Schema and a model, install mongoose which is a Node.js package that makes working with mongodb easier.
+Change directory back Todo folder with cd .. and install Mongoose
+```
+$ npm install mongoose
+```
