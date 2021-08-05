@@ -99,6 +99,6 @@ http://<PublicIP-or-PublicDNS>:5000
 # ROUTES
 There are three actions that our To-Do application needs to be able to do:
 
-1 Create a new task
-1 Display list of all tasks
-1 Delete a completed task
+1. Create a new task
+1. Display list of all tasks
+1. Delete a completed task
