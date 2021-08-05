@@ -58,3 +58,11 @@ still within the Todo directory, run this command
 ```
 ls
 ```
+![image](https://user-images.githubusercontent.com/56724044/128409027-7be6b576-cb8b-4e59-b6f6-06c964fe427e.png)
+
+# STEP 2 - INSTALL EXPRESSJS
+Expressjs is a framework for Node.js, therefore a lot of things developers would have programmed is already taken care of out of the box.
+To use express js, install it using npm. Remember that is the package manager for Node js.
+```
+$ npm install express
+```
