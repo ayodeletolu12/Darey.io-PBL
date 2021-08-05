@@ -1,4 +1,4 @@
-# WEB STACK IMPLEMENTATION/SOLUTION BASED ON MERN IN AWS CLOUD
+# WEB STACK WITH TO-DO IMPLEMENTATION/SOLUTION BASED ON MERN IN AWS CLOUD
 ### M - Mongo DB ----------- Database
 ### E - Express JS ---------- Node JS server side framework
 ### R - React JS ------------ Client side
@@ -29,4 +29,15 @@ After the installation, you can verify the node installation with the command be
 ```
 $ node -v
 $ npm -v
+```
+![image](https://user-images.githubusercontent.com/56724044/128393132-a5bbe16d-bc17-473e-94ce-0e0194a3194b.png)
+
+##### Application Code Setup
+Create a new directory for your To-Do project:
+```
+$ mkdir Todo
+```
+Run the command below to verify that the Todo directory is created with ls command
+```
+ls
 ```
