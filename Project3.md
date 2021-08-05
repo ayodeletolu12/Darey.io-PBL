@@ -134,3 +134,25 @@ Change directory back Todo folder with cd .. and install Mongoose
 ```
 $ npm install mongoose
 ```
+![image](https://user-images.githubusercontent.com/56724044/128416510-a81f8288-e6ae-4b7c-8959-50813ddeb12e.png)
+##### Create a new folder with mkdir models command
+```
+$ mkdir models
+```
+Change directory into the newly created ‘models’ folder with cd models.
+```
+$ cd models
+```
+Inside the models folder, create a file and name it todo.js
+```
+$ touch todo.js
+```
+You can also run the 3 consecutive commands together with && command
+```
+$ mkdir models && cd models && touch todo.js
+```
+Open the file created with vim todo.js then paste the code below in the file:
+```
+$ vim touch todo.js
+```
+
