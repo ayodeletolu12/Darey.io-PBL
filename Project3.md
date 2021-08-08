@@ -166,6 +166,40 @@ $ vim api.js
 ![image](https://user-images.githubusercontent.com/56724044/128418002-1f343bd2-2fbc-489d-9d14-625ad86205b1.png)
 
 # Next is MONGODB DATABASE
+In order to get the full functionality of our ToDO app, we need a database where we will store our data. For this we will use mLab.
+To sign up for MondoDB: https://www.mongodb.com/atlas-signup-from-mlab
+While setting up the DB, ensure that you allow access to the MongoDB database from anywhere. This is for testing purpose but in a real life production, you will not allow all access
+![image](https://user-images.githubusercontent.com/56724044/128625319-9ceb34d4-df43-4146-ad7c-97880fea6887.png)
+
+##### Create a MongoDB database and collection inside mLab
+![image](https://user-images.githubusercontent.com/56724044/128625368-86924f20-ad38-456f-b09b-288a8a08be51.png)
+
+In the **index.js file**, we specified **process.env** to access **environment variables**, but we have not yet created this file. So we need to do that now.
+
+##### Create a file in my Todo directory and name it **.env**
+```
+touch .env
+vim .env
+```
+In the text editor, paste the connection string to access the database in it. mongodb+srv://tolulopeolorunfemi:<password>@cluster0.achb3.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
+  Make sure you change the password and myFirstDatabase to your password and name of your database cluster
+  
+How to get the MongoDB connection string
+Click Database > Connect > Connect your Application
+![image](https://user-images.githubusercontent.com/56724044/128625505-79f57e82-2a09-49c1-97b0-5010aedff5a2.png)
+![image](https://user-images.githubusercontent.com/56724044/128625522-7c8b0a99-6ac8-4915-8321-57a686e018e5.png)
+![image](https://user-images.githubusercontent.com/56724044/128625541-b4247294-77cc-4889-9482-7b3bb44a75c6.png)
+
+Now we need to update the **index.js** to reflect the use of **.env** so that Node.js can connect to the database.
+
+```
+  vim index.js
+```
+
+
+
+
+
 
 
 
