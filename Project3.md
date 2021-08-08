@@ -190,15 +190,140 @@ Click Database > Connect > Connect your Application
 ![image](https://user-images.githubusercontent.com/56724044/128625522-7c8b0a99-6ac8-4915-8321-57a686e018e5.png)
 ![image](https://user-images.githubusercontent.com/56724044/128625541-b4247294-77cc-4889-9482-7b3bb44a75c6.png)
 
-Now we need to update the **index.js** to reflect the use of **.env** so that Node.js can connect to the database.
+Now we need to update the **index.js** in the ToDo dir to reflect the use of **.env** so that Node.js can connect to the database.
 
 ```
   vim index.js
 ```
+![image](https://user-images.githubusercontent.com/56724044/128625859-ebf2d51e-701b-4931-a47f-f2fd6e212364.png)
+```
+Using environment variables to store information is considered more secure and best practice to separate configuration and secret data from the application, instead of writing connection strings directly inside the index.js application file.
+```
+Start your server using the command:
+```
+  node index.js  
+ ``` 
+### I MET A BLOCKER WHEN STARTING MY SERVER
+```
+  Error: Cannot find module 'mongoose'
+```
+![Error loading node index js](https://user-images.githubusercontent.com/56724044/128625935-02caac1f-d88e-4e4d-8492-0188634cc08a.png)
 
+# How it was resolved.
+I installed the npm package mongoose and now link it to the Todo dir so that index.js can load the package
+```
+  $ sudo npm install mongoose -g
+  $ cd Todo
+  $ sudo npm link mongoose
+  $ node index.js
+```
+![install the module-g and link with app dir](https://user-images.githubusercontent.com/56724044/128626052-6d6b5d31-6878-4055-978e-0f266b0e18e8.png)
+  
+When you see ‘Database connected successfully’, if so – we have our backend configured. Now we are going to test it.  
+#### Another Blocker
+When I tried to run the node index.js again, i recieved an error  
+```
+  Emitted 'error' event on Server instance at: at emitErrorNT (net.js:1340:8) at processTicksAndRejections (internal/process/task_queues.js:84:21) { code: 'EADDRINUSE', errno: 'EADDRINUSE', syscall: 'listen', address: '::', port: 5000
+```  
+#### How I resolved it
+  I check the processes running, and I kill the process id of node index.js
+![image](https://user-images.githubusercontent.com/56724044/128626641-120afb79-06e5-4411-a03a-48952737b085.png)
 
+### Testing Backend Code without Frontend using RESTful API
+  
+  So far we have written backend part of our To-Do application, and configured a database, but we do not have a frontend UI yet. We need ReactJS code to achieve that. But during development, we will need a way to test our code using RESTfulL API. Therefore, we will need to make use of some API development client to test our code.
+  
+  In this project, we will use [Postman](https://www.getpostman.com/downloads/) to test our API.
+  Click [Install Postman](http://www.getpostman.com/downloads/) to download and install postman on your machine
+Click [Here](https://www.youtube.com/watch?v=FjgYtQK_zLE) to learn how perform [CRUD Operations](https://en.wikipedia.org/wiki/Create,_read,_update_and_delete) on Postman
+  
+You should test all the API endpoints and make sure they are working. For the endpoints that require body, you should send JSON back with the necessary fields since it’s what we setup in our code.  
 
+Now open your Postman, create a POST request to the API http://<PublicIP-or-PublicDNS>:5000/api/todos. This request sends a new task to our To-Do list so the application could store it in the database.
 
+Note: make sure your set header key Content-Type as application/json  
+![image](https://user-images.githubusercontent.com/56724044/128628632-3db5e9fb-18f5-410e-b488-79753c90d5ef.png)
+
+  When you create a POST request
+  ![image](https://user-images.githubusercontent.com/56724044/128628697-fd9d8574-5905-46cc-b0f6-1de530331800.png)
+
+Create a **GET request to your API on http://<PublicIP-or-PublicDNS>:5000/api/todos**. This request retrieves all existing records from out To-do application (backend requests these records from the database and sends it us back as a response to GET request).
+![image](https://user-images.githubusercontent.com/56724044/128628772-01661acf-383b-4f12-8624-59d1525f53a7.png)
+  
+Optional task: Try to figure out how to send a DELETE request to delete a task from out To-Do list.
+
+Hint: To delete a task – you need to send its ID as a part of DELETE request.
+
+By now you have tested backend part of our To-Do application and have made sure that it supports all three operations we wanted:
+
+1. Display a list of tasks – HTTP GET request
+2. Add a new task to the list – HTTP POST request
+3. Delete an existing task from the list – HTTP DELETE request
+  
+We have successfully created our Backend, now let go create the Frontend.
+  
+#  FRONTEND CREATION
+Since we are done with the functionality we want from our backend and API, it is time to create a user interface for a Web client (browser) to interact with the application via API. To start out with the frontend of the To-do app, we will use the create-react-app command to scaffold our app.
+
+In the same root directory as your backend code, which is the Todo directory, run:
+```
+   npx create-react-app client
+```
+This will create a new folder in your Todo directory called client, where you will add all the react code.
+![image](https://user-images.githubusercontent.com/56724044/128629419-fa628a90-39cc-488b-af9f-17c850641d37.png)
+
+### Running a React App
+Before testing the react app, there are some dependencies that need to be installed.
+
+1. Install concurrently. It is used to run more than one command simultaneously from the same terminal window.
+```
+  npm install concurrently --save-dev
+```  
+1. Install nodemon. It is used to run and monitor the server. If there is any change in the server code, nodemon will restart it automatically and load the new changes.
+```
+  npm install nodemon --save-dev
+```
+1. In Todo folder open the **package.json file**. Change the highlighted part of the below screenshot and replace with the code below.
+```
+"scripts": {
+"start": "node index.js",
+"start-watch": "nodemon index.js",
+"dev": "concurrently \"npm run start-watch\" \"cd client && npm start\""
+},
+```
+![image](https://user-images.githubusercontent.com/56724044/128629613-d6401e95-c006-4b37-a1c9-b1543a195f7b.png)
+
+After replacing the script, it should look like this
+![image](https://user-images.githubusercontent.com/56724044/128629852-5a17945f-b6c1-47c2-a03c-7f27d54a0872.png)
+
+#### Configure Proxy in package.json
+Change directory to ‘client’ from Todo dir
+````
+ $ cd client
+```  
+#### Open the package.json file
+$ vim package.json
+Add the key value pair in the package.json file "proxy": "http://localhost:5000".
+**"proxy": "http://localhost:5000"**.
+  
+The whole purpose of adding the proxy configuration in number 3 above is to make it possible to access the application directly from the browser by simply calling the server url like http://localhost:5000 rather than always including the entire path like http://localhost:5000/api/todos
+
+Now, ensure you are inside the Todo directory, and simply do:
+```
+  npm run dev
+```  
+Your app should open and start running on localhost:3000
+
+  
+  
+  
+  
+  
+npm install nodemon --save-dev  
+
+  
+  
+  
 
 
 
