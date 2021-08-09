@@ -302,21 +302,24 @@ After replacing the script, it should look like this
 ![image](https://user-images.githubusercontent.com/56724044/128629852-5a17945f-b6c1-47c2-a03c-7f27d54a0872.png)
 
 #### Configure Proxy in package.json
-Change directory to ‘client’ from Todo dir
+1. Change directory to ‘client’ from Todo dir
 ````
  $ cd client
 ```  
-#### Open the package.json file
+#### 1. Open the package.json file
 $ vim package.json
-Add the key value pair in the package.json file "proxy": "http://localhost:5000".
-**"proxy": "http://localhost:5000"**.
+1. Add the key value pair in the package.json file "proxy": "http://localhost:5000".
+"proxy": "http://localhost:5000".
   
+![Screenshot from 2021-08-09 19-40-28](https://user-images.githubusercontent.com/56724044/128764687-99ac68f6-ce6e-4ae6-a7be-7c8ecf5a252c.png)
+
 The whole purpose of adding the proxy configuration in number 3 above is to make it possible to access the application directly from the browser by simply calling the server url like http://localhost:5000 rather than always including the entire path like http://localhost:5000/api/todos
 
 Now, ensure you are inside the Todo directory, and simply do:
 ```
   npm run dev
-```  
+``` 
+
 Your app should open and start running on localhost:3000
 
   
