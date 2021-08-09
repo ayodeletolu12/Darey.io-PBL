@@ -227,6 +227,11 @@ When I tried to run the node index.js again, i recieved an error
 ```  
 #### How I resolved it
   I check the processes running, and I kill the process id of node index.js
+  ```
+    $ sudo lsof i tcp:5000
+    $ kill -9 pid
+  The -9 there will kill it immediately
+  ```
 ![image](https://user-images.githubusercontent.com/56724044/128626641-120afb79-06e5-4411-a03a-48952737b085.png)
 
 ### Testing Backend Code without Frontend using RESTful API
