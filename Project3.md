@@ -1,3 +1,4 @@
+![MyTodoAppOnTheBrowser](https://user-images.githubusercontent.com/56724044/129101379-432a899c-37e3-4766-8493-7814d0127c8c.png)
 # WEB STACK WITH TO-DO IMPLEMENTATION/SOLUTION BASED ON MERN IN AWS CLOUD
 ### M - Mongo DB ----------- Database
 ### E - Express JS ---------- Node JS server side framework
