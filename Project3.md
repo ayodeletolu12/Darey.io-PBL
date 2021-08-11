@@ -1,3 +1,4 @@
+![MyTodoAppRunonPort3000](https://user-images.githubusercontent.com/56724044/129101809-64052de6-1bef-4b1e-9ebb-9cd1db9b895d.png)
 ![MyTodoAppOnTheBrowser](https://user-images.githubusercontent.com/56724044/129101379-432a899c-37e3-4766-8493-7814d0127c8c.png)
 # WEB STACK WITH TO-DO IMPLEMENTATION/SOLUTION BASED ON MERN IN AWS CLOUD
 ### M - Mongo DB ----------- Database
@@ -677,7 +678,7 @@ When you are in the Todo directory run:
   
 Assuming no errors when saving all these files, our To-Do app should be ready and fully functional with the functionality discussed earlier: creating a task, deleting a task and viewing all your tasks.
   
-  The end result is shown on the first page of this project
+  The end result on the browser is shown on the first page of this project
   
 ![MyTodoAppOnTheBrowser](https://user-images.githubusercontent.com/56724044/129101081-af06c0f4-64f2-4c70-b4a5-19ddf0e3251e.png)
   ![MyTodoAppOnTheBrowser](https://user-images.githubusercontent.com/56724044/129101379-432a899c-37e3-4766-8493-7814d0127c8c.png)
