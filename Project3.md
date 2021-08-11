@@ -318,14 +318,12 @@ The whole purpose of adding the proxy configuration in number 3 above is to make
 Now, ensure you are inside the Todo directory, and simply do:
 ```
   npm run dev
-``` 
-
-Your app should open and start running on localhost:3000
-
+```
+![React](https://user-images.githubusercontent.com/56724044/129096464-33eb0e88-0eb1-404e-b45b-25e64945f43f.png)
+ 
+Important note: In order to be able to access the application from the Internet you have to open TCP port 3000 on EC2 by adding a new Security Group rule. 
   
-  
-  
-  
+The app should open and start running on localhost:3000  
   
 npm install nodemon --save-dev  
 
