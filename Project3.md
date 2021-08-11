@@ -675,6 +675,8 @@ When you are in the Todo directory run:
 ![MyTodoAppRunonPort3000](https://user-images.githubusercontent.com/56724044/129100845-5d00aa8b-0d12-4e45-92bb-5600bc5dc2bd.png)
   
 Assuming no errors when saving all these files, our To-Do app should be ready and fully functional with the functionality discussed earlier: creating a task, deleting a task and viewing all your tasks.
+![MyTodoAppOnTheBrowser](https://user-images.githubusercontent.com/56724044/129101081-af06c0f4-64f2-4c70-b4a5-19ddf0e3251e.png)
+  
 
 
 
