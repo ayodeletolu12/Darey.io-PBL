@@ -30,5 +30,6 @@ sudo systemctl start mongodb
 ```
 sudo systemctl status mongodb
 ```
+![Screenshot from 2021-08-16 19-43-43](https://user-images.githubusercontent.com/56724044/129620662-1fd0743f-077a-471a-9268-43b232993faf.png)
 
 
