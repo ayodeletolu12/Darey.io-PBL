@@ -32,4 +32,25 @@ sudo systemctl status mongodb
 ```
 ![Screenshot from 2021-08-16 19-43-43](https://user-images.githubusercontent.com/56724044/129620662-1fd0743f-077a-471a-9268-43b232993faf.png)
 
+#### Install some dependencies, that our application will depend on to work fine. Install Node Package Manager(NPM) npm is used to install packages for Node js
+```
+sudo apt install -y npm
+```
+#### Install "body-parser package: we need "body-parser" package to help us process JSON files passed in requests to the server.
+```
+sudo npm install body-parser
+```
+### Create a root directory where we are going to build our Application, we are going to make directory called Books
+```
+mkdir Books && cd Books
+```
+#### In the Books directory, we will initialize npm project
+```
+npm init
+```
+#### Add a file to it named server.js
+```
+vim server.js
+```
+
 
