@@ -19,5 +19,16 @@
  sudo apt install -y nodejs
 ```
 # STEP 2: Install MongoDB
+```
+sudo apt install -y mongodb
+```
+#### Start the Server so that the daemon, the services that need to run from the background to make the app works fine is started
+```
+sudo systemctl start mongodb
+```
+#### Verify that the service is up and running
+```
+sudo systemctl status mongodb
+```
 
 
