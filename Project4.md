@@ -44,13 +44,56 @@ sudo npm install body-parser
 ```
 mkdir Books && cd Books
 ```
-#### In the Books directory, we will initialize npm project
+#### In the Books directory, we will initialize npm project. When you initialize, it contains the info in json format of our project called package.json
 ```
 npm init
 ```
-#### Add a file to it named server.js
+#### Add a file to it named server.js. That will be our entry point instead of using index.js
 ```
 vim server.js
 ```
+Copy and paste the web server code below into the ```server.js``` file
+```
+var express = require('express');
+var bodyParser = require('body-parser');
+var app = express();
+app.use(express.static(_dirname + '/public'));
+app.use(bodyParser.json());
+require('./apps/routes')(app);
+app.set('port', 3300);
+app.listen(app.get('port'), function() {
+    console.log('Server up: http://localhost:' + app.get('port'));
+});
+```
+### Install Express and set up routes to the server
+Express is a minimal and flexible Node.js web application framework that providesfeatures for web and mobile applications.
 
+``` We will use Express in to pass book information to and from our MongoDB database ```
+### We will also use Mongoose package which provides a straight-forward, schema-based solution to model your application data. We will use mongoose to establish a schema for the database to store data of our book register.
+To install the 2 packages
 
+```
+sudo npm install express mongoose
+```
+##### In Books folder, create a folder named ```apps``` and cd into the apps directory
+```
+mkdir apps && cd apps
+```
+Create a file names ```routes.js```
+```
+vim routes.js
+```
+Copy and paste the code in the routes.js
+```
+var Book = require('./models/book');
+module.exports = function(app) {
+  app.get('/book', function(req, res) {
+    Book.find({}, function(err, result) {
+      if (err) throw err;
+      res.json(result);
+    });
+  });
+  app.post('/book', function (req, res) {
+    var book = new Book( {
+      name:req.body .name,
+      isbn:req
