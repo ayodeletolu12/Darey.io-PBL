@@ -198,3 +198,37 @@ app.controller('myCtrl', function($scope, $http) {
   };
 });  
 ```
+In 'public' folder, create a file named ```index.html```
+```
+vim index.html
+```
+Copy and paste the code below into index.html file.
+```
+<!doctype html>
+<html ng-app="myApp" ng-controller="myCtrl>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angularjs/1.6.4/angular.min.js"></script>
+    <script> src="script.js"></script>
+  </head> 
+  <body>
+    <div>
+      <table>
+        <tr>
+          <td>Name:</td>
+          <td><input type="text" ng-model="Name"></td>
+        </tr>
+        <tr>
+          <td>Isbn:</td>
+          <td><input type="text" ng-model="Isbn"></td>
+        </tr>
+        <tr>
+          <td>Author:</td>
+          <td><input type="text" ng-model="Author"></td>
+        </tr>
+        <tr>
+          <td>Pages:</td>
+          <td><input type="number" ng-model="Pages"></td>
+        </tr>
+      </table>
+      <button ng-click
+          
