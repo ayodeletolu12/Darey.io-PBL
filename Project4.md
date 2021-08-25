@@ -96,4 +96,42 @@ module.exports = function(app) {
   app.post('/book', function (req, res) {
     var book = new Book( {
       name:req.body .name,
-      isbn:req
+      isbn:req.body.isbn,
+      author:req.body.author,
+      pages:req.body.pages
+    });
+  });
+  book.save(function(err, result) {
+    if ( err ) throw err;
+    res.json( {
+      message:"Successfully added book",
+      book:result
+    });
+  });
+});  
+app.delete("/book/:isbn", function(req, res) {
+  Book.findOneAndRemove(req.query, function(err, result) {
+    if ( err ) throw err;
+    res.json( {
+      message: "Successfully deleted the book",
+      book: result
+    });
+  });
+});
+var path = require('path');
+app.get('*', function(req, res) {
+  res.sendfile(path.join(_dirname + '/public', 'index.html')};
+});
+};
+```
+In the 'apps' folder, create a folder named ```models```
+```
+mkdir models && cd models
+```
+##### Create a file named ```book.js```
+```
+vim book.js
+```
+##### Copy and paste the code below into 'book.js'
+```
+var mongoose
