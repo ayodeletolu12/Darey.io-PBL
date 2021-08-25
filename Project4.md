@@ -134,4 +134,67 @@ vim book.js
 ```
 ##### Copy and paste the code below into 'book.js'
 ```
-var mongoose
+var mongoose = require('mongoose');
+var dbHost = 'mongodb://localhost:27017/test';
+mongoose.connect(dbHost);
+mongoose.connection;
+mongoose.set('debug', true);
+var bookSchema = mongoose.Schema( {
+  name: String,
+  isbn: {type: String, index: true},
+  author: String,
+  pages: Number
+});
+var Book = mongoose.model('Book', bookSchema);
+module.exports = mongoose.model('Book', bookSchema);
+```
+### Step 4 - Access the routes with Angular JS
+AngularJS provides a web framework for creating dynamic views in your web applications. We will use AngularJS to connect our web page with Express and perform actions on our book register
+##### Change the directory back to 'Books'
+```cd ../..```
+#### Create a folder named public
+```
+mkdir public && cd public
+```
+##### Add a file named 
+```script.js```
+##### Copy and paste the code below (controller configuration defined) into the script.js file
+```
+var app = angular.module('myApp', []);
+app.controller('myCtrl', function($scope, $http) {
+  $http( {
+    method: 'Get',
+    url: '/book'
+  }).then(function successCallback(response) {
+    $scope.books = response.data;
+  }, function errorCallback(response) {
+    console.log('error: ' + response);
+  });
+  $scope.del_book = function(book) {
+    $http( {
+      method: 'DELETE',
+      url: '/book/:isbn',
+      params: {'isbn': book.isbn}
+    }).then (function successCallback(response) {
+      console.log(response);
+    }, function errorCallback(response) {
+      console.log('error: ' + response);
+    });
+  };
+  $scope.add_book = function() {
+    var body = '{ "name": "' + $scope.Name +
+    '", "isbn": "' + $scope.Isbn + 
+    '", "author": "' + $scope.Author + 
+    '", "pages": "' + $scope.Pages + '" }';
+    $http({
+      method: 'POST',
+      url: '/book',
+      data: body
+    }).then(function successCallback(response) {
+      console.log(response);
+    }, function errorCallback(response) {
+      console.log('Error: ' + response);
+    });
+  };
+});  
+```
